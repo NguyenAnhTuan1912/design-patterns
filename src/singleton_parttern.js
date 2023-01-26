@@ -11,11 +11,13 @@ const Vehicle = (function() {
     }
   }
 
-  return function(numberOfSeats, color, topSpeed, sound) {
-    if(instance === null) {
-      instance = new VehicleConstructor(numberOfSeats, color, topSpeed, sound);
+  return {
+    GetInstance: (numberOfSeats, color, topSpeed, sound) => {
+      if(instance === null) {
+        instance = new VehicleConstructor(numberOfSeats, color, topSpeed, sound);
+      }
+      return instance;
     }
-    return instance;
   }
 })();
 
