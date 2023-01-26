@@ -1,0 +1,22 @@
+{
+  "name": "js-design-patterns",
+  "version": "1.0.0",
+  "description": "This repo are lessons, practices about Design Patterns",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenAnhTuan1912/js-design-patterns.git"
+  },
+  "keywords": [
+    "design-pattern"
+  ],
+  "author": "Nguyen Anh Tuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenAnhTuan1912/js-design-patterns/issues"
+  },
+  "homepage": "https://github.com/NguyenAnhTuan1912/js-design-patterns#readme"
+}
