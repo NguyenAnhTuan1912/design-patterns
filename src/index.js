@@ -1,5 +1,7 @@
 import Vehicle from "./singleton_parttern.js";
 import AnimalFactory from "./factory_method_pattern.js";
+import { HumanFactory } from "./abstract_factory_pattern.js";
+import { HouseDirector, HouseBuilder } from "./builder_pattern.js";
 
 /// Creational Design Patterns
 ///
@@ -36,3 +38,17 @@ console.log(`Type of ${donald.$name}: ${donald.type}`);
 ///
 ///
 ///
+/// Abstract Factory Pattern
+const hFactory = new HumanFactory();
+const s = hFactory.CreateStudent("Nguyen Anh Tuan", 20, 9.2);
+const w = hFactory.CreateWorker("Tran Tuan", 67, 15000000);
+s.say();
+w.say();
+///
+///
+///
+/// Builder Pattern
+const houseDirector = new HouseDirector();
+const houseBuilder = new HouseBuilder();
+const house = houseDirector.construct(houseBuilder);
+console.log(house);

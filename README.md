@@ -52,7 +52,8 @@ export default Vehicle;
 ### Factory Method Pattern
 Trong javascript không có interface, cho nên mình sẽ tiếp tục dùng Function Constructor thay thế cho interface.
 
-DP này cung cấp cho chúng ta một Creator (ở đây là Function Constructor) trong Creator chúng ta có phương thức ```Create()``` dùng để tạo các instance. Đúng như tên gọi thì nó giống như một cái nhà máy, mình đưa input vào và nó sẽ tạo ra và trả cho mình một instance tương ứng với input đó. Đến đây thì mình đã đấy sự thú vị của Design Pattern, mình có thể kết hợp Factory Method Pattern với Singleton Pattern.
+DP này cung cấp cho chúng ta một Creator (ở đây là Function Constructor) trong Creator chúng ta có phương thức ```Create(type)``` dùng để tạo các instance. Đúng như tên gọi thì nó giống như một cái nhà máy, mình đưa input vào và nó sẽ tạo ra và trả cho mình một instance tương ứng với input đó. Đến đây thì mình đã đấy sự thú vị của Design Pattern, mình có thể kết hợp Factory Method Pattern với Singleton Pattern.
+
 ```
 function AnimalFactory() {
   this.CreateAnimal = (type) => {
@@ -104,10 +105,137 @@ export default AnimalFactory;
 ```
 
 ### Abstract Factory Pattern
-Chưa học nên cập nhật sau
+AFP không khác gì với FMP là mấy, qua thời gian thì người ta cũng gộp 2 thứ này là một và gọi tên nó là Factory, các Factory không còn là một thứ gì cụ thể nữa, mà nó sẽ trở nên trừu tượng hơn.
+
+```
+class AbstractHuman {
+  name = "";
+  age = 0;
+
+  constructor() {
+    if(this.constructor === AbstractHuman) {
+      throw new Error("Abstract classes can't be instantiated.");
+    }
+  }
+
+  say() {}
+}
+
+class Student extends AbstractHuman {
+  point = 1.0;
+
+  constructor(name, age, point) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.point = point
+  }
+
+  say() {
+    console.log(`My name is ${this.name}, I'm a student. I got ${this.point} in the final Exam.`);
+  }
+}
+
+class Worker extends AbstractHuman {
+  salary = 0;
+
+  constructor(name, age, salary) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.salary = salary
+  }
+
+  say() {
+    console.log(`My name is ${this.name}, I'm a worker. My current salary is ${this.salary}`);
+  }
+}
+
+class AbstractHumanFactory {
+  CreateStudent(name, age, point) {};
+  CreateWorker(name, age, salary) {};
+}
+
+class HumanFactory extends AbstractHumanFactory {
+  CreateStudent(name, age, point) {
+    return new Student(name, age, point);
+  };
+  CreateWorker(name, age, salary) {
+    return new Worker(name, age, salary);
+  };
+}
+
+export {
+  HumanFactory
+}
+```
+
 
 ### Builder Pattern
-Chưa học nên cập nhật sau
+Như tên gọi của nó thì nó sẽ thực hiện các chuỗi công việc có liên quan để tạo nên một object phức tạp. Về cơ bản thì nó là một DP dùng để gom lại các bước (function) để tạo ra một object hoàn chỉnh.
+
+Pattern này sẽ giúp chúng ta tạo ra một Default Object, và Từ DO đó chúng ta sẽ mod nó lại phù hợp với ngữ cảnh sử dụng.
+
+```
+function HouseDirector() {
+  this.construct = (houseBuilder) => {
+    houseBuilder.createNewHouseDesign();
+    if(houseBuilder.hasHouseDesign()) {
+      houseBuilder.buildRoom();
+      houseBuilder.buildFloor();
+      houseBuilder.paintHouse();
+      houseBuilder.AddFurnitures();
+      return houseBuilder.getCompleteHouse();
+    } else {
+      return null;
+    }
+  }
+}
+
+function HouseBuilder() {
+  let _instance;
+
+  this.hasHouseDesign = () => {
+    return _instance !== undefined;
+  }
+
+  this.createNewHouseDesign = () => {
+    _instance = new House();
+  }
+
+  this.buildFloor = () => {
+    _instance.floors = 1;
+  }
+
+  this.buildRoom = () => {
+    _instance.rooms = 4;
+  }
+
+  this.paintHouse = () => {
+    _instance.color = 'white';
+  }
+
+  this.AddFurnitures = () => {
+    _instance.furnitures = ['Table', 'Bed'];
+  }
+
+  this.getCompleteHouse = () => {
+    return _instance;
+  }
+}
+
+function House() {
+  this.floors = 0;
+  this.color = '';
+  this.rooms = 0;
+  this.furnitures = [];
+}
+
+export {
+  HouseDirector,
+  HouseBuilder
+}
+```
 
 ### Prototype Pattern
 Chưa học nên cập nhật sau
