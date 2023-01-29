@@ -2,6 +2,7 @@ import Vehicle from "./singleton_parttern.js";
 import AnimalFactory from "./factory_method_pattern.js";
 import { HumanFactory } from "./abstract_factory_pattern.js";
 import { HouseDirector, HouseBuilder } from "./builder_pattern.js";
+import { getUSAWeapon, getVNWeapon } from "./prototype_pattern.js";
 
 /// Creational Design Patterns
 ///
@@ -51,4 +52,14 @@ w.say();
 const houseDirector = new HouseDirector();
 const houseBuilder = new HouseBuilder();
 const house = houseDirector.construct(houseBuilder);
+
 console.log(house);
+///
+///
+///
+/// Prototype Pattern
+const vnWeapon = getVNWeapon();
+const usaWeapon = getUSAWeapon();
+
+console.log(vnWeapon);
+console.log(usaWeapon);

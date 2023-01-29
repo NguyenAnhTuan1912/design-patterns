@@ -170,7 +170,6 @@ export {
 }
 ```
 
-
 ### Builder Pattern
 Như tên gọi của nó thì nó sẽ thực hiện các chuỗi công việc có liên quan để tạo nên một object phức tạp. Về cơ bản thì nó là một DP dùng để gom lại các bước (function) để tạo ra một object hoàn chỉnh.
 
@@ -238,10 +237,54 @@ export {
 ```
 
 ### Prototype Pattern
-Chưa học nên cập nhật sau
+Pattern này giúp chúng ta tạo một object, mà object này là một object đã được clone lại từ một object từ trước đó (object mặc định).
+
+DP này giúp chúng ta clone lại một default object mà không cần phải lặp lại code ở các function khác. Ví dụ như chúng ta có một Product, thì Product này cần phải được tạo một số default properties để làm gì? Để khi mà người bán họ không có gì chỉnh sửa thì họ có thể lưu nó lại hoặc dùng để làm khuôn cho các Product khác.
+
+```
+function WeaponPrototype(prototype) {
+  const _prototype = prototype;
+
+  this.clone = () => {
+    let cloneOfPrototype = new Weapon();
+    cloneOfPrototype.damage = _prototype.damage;
+    cloneOfPrototype.type = _prototype.type;
+    cloneOfPrototype.madeIn = _prototype.madeIn;
+    return cloneOfPrototype;
+  };
+}
+
+function Weapon(damage, type, madeIn) {
+  this.damage = damage;
+  this.type = type;
+  this.madeIn = madeIn;
+}
+
+function getVNWeapon() {
+  const defaultVNMeleeWeapon = new Weapon(300, "Melee", "Viet Nam");
+  const prototype = new WeaponPrototype(defaultVNMeleeWeapon);
+  const cloneOfDefaultVNMeleeWeapon = prototype.clone();
+  return cloneOfDefaultVNMeleeWeapon;
+}
+
+function getUSAWeapon() {
+  const defaultUSAMeleeWeapon = new Weapon(100, "Range", "United States");
+  const prototype = new WeaponPrototype(defaultUSAMeleeWeapon);
+  const cloneOfDefaultUSAMeleeWeapon = prototype.clone();
+  return cloneOfDefaultUSAMeleeWeapon;
+}
+
+export {
+  getVNWeapon,
+  getUSAWeapon
+}
+```
 <br>
+
 ## Structural Design Patterns
 Chưa học nên cập nhật sau
 <br>
+
 ## Behavioral Design Patterns
 Chưa học nên cập nhật sau
+<br>
