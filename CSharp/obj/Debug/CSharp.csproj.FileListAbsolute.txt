@@ -1,0 +1,8 @@
+D:\Hoctap\Design Pattern\CSharp\bin\Debug\CSharp.exe.config
+D:\Hoctap\Design Pattern\CSharp\bin\Debug\CSharp.exe
+D:\Hoctap\Design Pattern\CSharp\bin\Debug\CSharp.pdb
+D:\Hoctap\Design Pattern\CSharp\obj\Debug\CSharp.csproj.AssemblyReference.cache
+D:\Hoctap\Design Pattern\CSharp\obj\Debug\CSharp.csproj.SuggestedBindingRedirects.cache
+D:\Hoctap\Design Pattern\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
+D:\Hoctap\Design Pattern\CSharp\obj\Debug\CSharp.exe
+D:\Hoctap\Design Pattern\CSharp\obj\Debug\CSharp.pdb

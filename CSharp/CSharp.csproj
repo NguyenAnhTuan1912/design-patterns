@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Creational Design Patterns\Factory Method Pattern\FactoryMethodExampleExecute.cs" />
+    <Compile Include="Creational Design Patterns\Factory Method Pattern\FerrariFactory.cs" />
+    <Compile Include="Creational Design Patterns\Singleton Pattern\CarSingleton.cs" />
+    <Compile Include="Creational Design Patterns\Singleton Pattern\SingletonExampleExecute.cs" />
+    <Compile Include="Interfaces\IInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
