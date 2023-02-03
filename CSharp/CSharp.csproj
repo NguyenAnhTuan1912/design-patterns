@@ -43,7 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Human.cs" />
+    <Compile Include="Classes\PCComponent.cs" />
     <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Creational Design Patterns\Abstract Factory Pattern\AbstractFactoryExampleExecute.cs" />
+    <Compile Include="Creational Design Patterns\Abstract Factory Pattern\PeopleFactory.cs" />
+    <Compile Include="Creational Design Patterns\Builder Pattern\BuilderExampleExecute.cs" />
+    <Compile Include="Creational Design Patterns\Builder Pattern\CardBuilder.cs" />
     <Compile Include="Creational Design Patterns\Factory Method Pattern\FactoryMethodExampleExecute.cs" />
     <Compile Include="Creational Design Patterns\Factory Method Pattern\FerrariFactory.cs" />
     <Compile Include="Creational Design Patterns\Singleton Pattern\CarSingleton.cs" />
