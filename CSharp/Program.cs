@@ -1,6 +1,7 @@
 ﻿using CSharp.Creational_Design_Patterns.Abstract_Factory_Pattern;
 using CSharp.Creational_Design_Patterns.Builder_Pattern;
 using CSharp.Creational_Design_Patterns.Factory_Method_Pattern;
+using CSharp.Creational_Design_Patterns.Prototype_Pattern;
 using CSharp.Creational_Design_Patterns.Singleton_Pattern;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,14 @@ namespace CSharp
     {
         static void PrintOption()
         {
+            Console.WriteLine("Creattional Design Patterns");
+            Console.WriteLine("=========================================");
             Console.WriteLine("1. Singleton Pattern example");
             Console.WriteLine("2. Factory Method Pattern example");
             Console.WriteLine("3. Abstract Factory Pattern example");
             Console.WriteLine("4. Builder Pattern example");
+            Console.WriteLine("5. Prototype Pattern example");
+            Console.WriteLine("=========================================");
             Console.WriteLine("0. Stop");
         }
 
@@ -52,6 +57,13 @@ namespace CSharp
                         Console.WriteLine("Builder Pattern Example");
                         Console.WriteLine("=====================================");
                         BuilderExampleExecute.Run();
+                        break;
+                    }
+                case 5:
+                    {
+                        Console.WriteLine("Prototype Pattern Example");
+                        Console.WriteLine("=====================================");
+                        PrototypePatternExampleExecute.Run();
                         break;
                     }
                 case 0:
